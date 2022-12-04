@@ -13,7 +13,7 @@ export const InputWithAlert: React.FC<Props> = ({
 }) => {
   return (
     <div className={styles.main}>
-      <Input {...inputProps} />
+      <Input {...inputProps} error={errorMessage} />
       <Alert message={errorMessage} />
     </div>
   );

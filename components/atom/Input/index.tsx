@@ -1,11 +1,21 @@
 import { forwardRef } from 'react';
+import clsx from 'clsx';
 import styles from './input.module.css';
 
-type Props = React.ComponentPropsWithoutRef<'input'>;
+type Props = React.ComponentPropsWithoutRef<'input'> & {
+  error?: string;
+};
 
 // eslint-disable-next-line react/display-name
 export const Input = forwardRef<HTMLInputElement, Props>(
-  ({ ...props }, ref) => {
-    return <input {...props} ref={ref} className={styles.input} />;
+  ({ error, ...props }, ref) => {
+    console.log(error);
+    return (
+      <input
+        {...props}
+        ref={ref}
+        className={clsx(styles.input, error && styles.error)}
+      />
+    );
   },
 );
