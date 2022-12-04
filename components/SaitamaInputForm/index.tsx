@@ -27,6 +27,14 @@ export const SaitamaInputForm = () => {
         inputProps={{ ...register('name'), id: 'name' }}
         errorMessage={errors.name && errors.name.message}
       />
+      <div className={styles.submit}>
+        <button type="submit" className={styles.primaryButton}>
+          送信
+        </button>
+        <button type="button" className={styles.secondaryButton}>
+          行ったことないよ
+        </button>
+      </div>
     </form>
   );
 };

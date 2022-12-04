@@ -1,5 +1,5 @@
-import { Alert } from '../atom/Alert';
-import { Input } from '../atom/Input';
+import { Alert } from '../Alert';
+import { Input } from '../Input';
 import styles from './inputWithAlert.module.css';
 
 type Props = {
