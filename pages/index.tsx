@@ -13,7 +13,6 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1>Saitama.js vol.4 sample</h1>
         <SaitamaInputForm />
       </main>
       <footer className={styles.footer}>

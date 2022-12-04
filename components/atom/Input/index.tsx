@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './input.module.css';
 
 type Props = Omit<React.ComponentProps<'input'>, 'className'> & {
-  ref?: React.MutableRefObject<HTMLInputElement>;
+  ref?: React.RefObject<HTMLInputElement>;
 };
 
 export const Input: React.FC<Props> = ({ ...props }) => (
