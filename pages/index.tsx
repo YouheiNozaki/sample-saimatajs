@@ -13,6 +13,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <h1>Saitama.js vol.4 「再実装 React Testing Library」</h1>
         <SaitamaInputForm />
       </main>
       <footer className={styles.footer}>
