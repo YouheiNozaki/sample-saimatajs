@@ -1,10 +1,11 @@
-import React from 'react';
+import { forwardRef } from 'react';
 import styles from './input.module.css';
 
-type Props = Omit<React.ComponentProps<'input'>, 'className'> & {
-  ref?: React.RefObject<HTMLInputElement>;
-};
+type Props = React.ComponentPropsWithoutRef<'input'>;
 
-export const Input: React.FC<Props> = ({ ...props }) => (
-  <input {...props} ref={props.ref} className={styles.input} />
+// eslint-disable-next-line react/display-name
+export const Input = forwardRef<HTMLInputElement, Props>(
+  ({ ...props }, ref) => {
+    return <input {...props} ref={ref} className={styles.input} />;
+  },
 );
