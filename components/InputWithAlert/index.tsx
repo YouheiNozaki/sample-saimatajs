@@ -11,7 +11,6 @@ export const InputWithAlert: React.FC<Props> = ({
   inputProps,
   errorMessage,
 }) => {
-  console.log(inputProps);
   return (
     <div className={styles.main}>
       <Input {...inputProps} />
