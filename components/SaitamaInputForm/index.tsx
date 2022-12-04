@@ -4,7 +4,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import styles from './saitamaInputForm.module.css';
 import { schema, type Schema } from './resolver';
 
-export const SaitamaInputForm = () => {
+type Props = {
+  handle: (bool: boolean) => void;
+};
+
+export const SaitamaInputForm: React.FC<Props> = ({ handle }) => {
   const {
     register,
     handleSubmit,
@@ -16,7 +20,7 @@ export const SaitamaInputForm = () => {
   return (
     <form
       onSubmit={handleSubmit((d) => {
-        console.log(d);
+        handle(d.name ? true : false);
       })}
     >
       <label htmlFor="name" className={styles.label}>
@@ -24,14 +28,26 @@ export const SaitamaInputForm = () => {
       </label>
       <InputWithAlert
         // aria-invalid={errors.name ? 'true' : 'false'}
-        inputProps={{ ...register('name'), id: 'name' }}
+        inputProps={{
+          ...register('name'),
+          id: 'name',
+          placeholder: '例:さいたま市、杉戸町',
+        }}
         errorMessage={errors.name && errors.name.message}
       />
       <div className={styles.submit}>
-        <button type="submit" className={styles.primaryButton}>
+        <button
+          type="submit"
+          className={styles.primaryButton}
+          disabled={errors.name !== undefined}
+        >
           送信
         </button>
-        <button type="button" className={styles.secondaryButton}>
+        <button
+          type="button"
+          className={styles.secondaryButton}
+          onClick={() => handle(false)}
+        >
           行ったことないよ
         </button>
       </div>

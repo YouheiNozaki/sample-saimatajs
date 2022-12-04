@@ -14,7 +14,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
   font-size: 12px;
   color: white;
   background-color: #26a69a;
@@ -24,13 +23,17 @@
   cursor: pointer;
 }
 
+.primaryButton:disabled {
+  background-color: #e0f2f1;
+}
+
 .secondaryButton {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
-  font-size: 12px;
-  color: #26a69a;
+  padding: 8px;
+  font-size: 8px;
+  color: #4db6ac;
   background-color: white;
   border: 1px solid #b2dfdb;
   border-radius: 4px;

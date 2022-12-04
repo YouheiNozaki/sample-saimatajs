@@ -1,9 +1,14 @@
+import { useCallback, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { SaitamaInputForm } from '../components/SaitamaInputForm';
 
 export default function Home() {
+  const [isSaitama, setIsSaitama] = useState<boolean | undefined>(undefined);
+  const handle = useCallback((bool: boolean) => {
+    setIsSaitama(bool);
+  }, []);
   return (
     <div className={styles.container}>
       <Head>
@@ -14,7 +19,12 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1>Saitama.js vol.4 「再実装 React Testing Library」</h1>
-        <SaitamaInputForm />
+        <SaitamaInputForm handle={handle} />
+        {isSaitama === undefined
+          ? null
+          : isSaitama
+          ? 'LGTM'
+          : 'いつか埼玉に遊びにきてね'}
       </main>
       <footer className={styles.footer}>
         <a

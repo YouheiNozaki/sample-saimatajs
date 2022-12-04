@@ -9,7 +9,6 @@ type Props = React.ComponentPropsWithoutRef<'input'> & {
 // eslint-disable-next-line react/display-name
 export const Input = forwardRef<HTMLInputElement, Props>(
   ({ error, ...props }, ref) => {
-    console.log(error);
     return (
       <input
         {...props}
