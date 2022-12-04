@@ -11,6 +11,17 @@ a {
   text-decoration: none;
 }
 
+a {
+  color: #80cbc4;
+  font-size: 12px;
+}
+a:hover {
+  color: #009688;
+}
+a:active {
+  color: #009688;
+}
+
 * {
   box-sizing: border-box;
 }

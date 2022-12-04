@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import { SaitamaInputForm } from '../components/SaitamaInputForm';
+import { BiLinkExternal } from 'react-icons/bi';
 
 export default function Home() {
   const [isSaitama, setIsSaitama] = useState<boolean | undefined>(undefined);
@@ -20,11 +21,33 @@ export default function Home() {
       <main className={styles.main}>
         <h1>Saitama.js vol.4 「再実装 React Testing Library」</h1>
         <SaitamaInputForm handle={handle} />
-        {isSaitama === undefined
-          ? null
-          : isSaitama
-          ? 'LGTM'
-          : 'いつか埼玉に遊びにきてね'}
+        {isSaitama === undefined ? null : isSaitama ? (
+          <div className={styles.result}>
+            <h2>👏👏また埼玉にきてね👏👏</h2>
+            <a
+              href="https://chocotabi-saitama.jp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.resultLink}
+            >
+              ちょこたび埼玉
+              <BiLinkExternal />
+            </a>
+          </div>
+        ) : (
+          <div className={styles.result}>
+            <h2>😢😢いつか埼玉にきてね😢😢</h2>
+            <a
+              href="https://chocotabi-saitama.jp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.resultLink}
+            >
+              ちょこたび埼玉
+              <BiLinkExternal />
+            </a>
+          </div>
+        )}
       </main>
       <footer className={styles.footer}>
         <a

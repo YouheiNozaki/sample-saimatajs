@@ -2,11 +2,11 @@
   padding: 16px;
   height: 24px;
   border-radius: 4px;
-  border: 1px solid #b2dfdb;
+  border: 1px solid #e0f2f1;
 }
 
 .input:focus {
-  border: 1px solid #4db6ac;
+  border: 1px solid #80cbc4;
   box-shadow: 0 1px 4px rgb(0 0 0 / 8%);
 }
 
