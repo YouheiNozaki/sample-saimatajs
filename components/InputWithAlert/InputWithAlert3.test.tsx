@@ -5,7 +5,7 @@ describe('InputWithAlert3', () => {
   test('正常系：エラーメッセージが表示されない', () => {
     render(<InputWithAlert inputProps={{ defaultValue: '' }} />);
 
-    // expect(screen.queryByRole('alert')).toBeNull();
+    expect(screen.queryByRole('alert')).toBeNull();
   });
 
   test('エラーメッセージが表示される', async () => {
@@ -15,8 +15,8 @@ describe('InputWithAlert3', () => {
         errorMessage="それは埼玉県の市町村じゃないよ"
       />,
     );
-    // const alert = await screen.findByRole('alert');
+    const alert = await screen.findByRole('alert');
 
-    // expect(alert).toBeInTheDocument();
+    expect(alert).toBeInTheDocument();
   });
 });

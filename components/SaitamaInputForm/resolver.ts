@@ -2,9 +2,9 @@ import * as z from 'zod';
 
 export const schema = z.object({
   name: z.string().refine((value) => {
-    const hasSaitama = saitama.includes(value)
-    return hasSaitama
-  }, "それは埼玉県の市町村じゃないよ"),
+    const hasSaitama = saitama.includes(value);
+    return hasSaitama;
+  }, 'それは埼玉県の市町村じゃないよ'),
 });
 
 export type Schema = z.infer<typeof schema>;

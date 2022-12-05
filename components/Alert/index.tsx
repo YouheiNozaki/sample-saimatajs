@@ -10,7 +10,8 @@ export const Alert: React.FC<Props> = ({ message }) => {
   }
 
   return (
-    <span id="alert" className={styles.alert}>
+    // idはテストの良くない例として、あえて入れています。
+    <span role="alert" id="alert" className={styles.alert}>
       {message}
     </span>
   );

@@ -1,13 +1,13 @@
 import { render } from '@testing-library/react';
 import { InputWithAlert } from '.';
-import { getTextById } from '../../test-utils/assertions';
+import { queryByAlertRole } from '../../test-utils/assertions';
 
-describe('InputWithAlert1:idでテストをしている良くない例', () => {
+describe('InputWithAlert2:roleを取得する関数を自作', () => {
   test('正常系：エラーメッセージが表示されない', () => {
     render(<InputWithAlert inputProps={{ defaultValue: '' }} />);
-    const text = getTextById('alert');
+    const alert = queryByAlertRole();
 
-    expect(text).toBe(undefined);
+    expect(alert).toBeNull();
   });
 
   test('エラーメッセージが表示される', async () => {
@@ -17,8 +17,8 @@ describe('InputWithAlert1:idでテストをしている良くない例', () => {
         errorMessage="それは埼玉県の市町村じゃないよ"
       />,
     );
-    const text = getTextById('alert');
+    const alert = queryByAlertRole();
 
-    expect(text).toBe('それは埼玉県の市町村じゃないよ');
+    expect(alert).toBeInTheDocument();
   });
 });
