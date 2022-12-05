@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import { InputWithAlert } from '.';
 import { getTextById } from '../../test-utils/assertions';
 
-describe('InputWithAlert1', () => {
+describe('InputWithAlert1:idでテストをしているとても良くない例', () => {
   test('正常系：エラーメッセージが表示されない', () => {
     render(<InputWithAlert inputProps={{ defaultValue: '' }} />);
     const text = getTextById('alert');
