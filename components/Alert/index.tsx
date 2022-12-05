@@ -10,7 +10,7 @@ export const Alert: React.FC<Props> = ({ message }) => {
   }
 
   return (
-    <span role="alert" className={styles.alert}>
+    <span id="alert" className={styles.alert}>
       {message}
     </span>
   );
