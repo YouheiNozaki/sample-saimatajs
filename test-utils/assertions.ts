@@ -20,6 +20,7 @@ export const Invalid = {
 } as const;
 type invalid = typeof Invalid[keyof typeof Invalid];
 
+// aria-invalidを強制するのは本来必要ないかもしれませんが、あくまでサンプルとして参考にしてください。
 export const assertInput = (Invalid: invalid, input = queryInput()) => {
   if (Invalid === 'false') {
     expect(input).toHaveAttribute('aria-invalid', 'false');
