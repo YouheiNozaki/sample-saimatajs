@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { InputWithAlert } from '.';
 
-describe('InputWithAlert3', () => {
+describe('InputWithAlert3:React Testing Libraryでのroleを使用したテスト例', () => {
   test('正常系：エラーメッセージが表示されない', () => {
     render(<InputWithAlert inputProps={{ defaultValue: '' }} />);
 

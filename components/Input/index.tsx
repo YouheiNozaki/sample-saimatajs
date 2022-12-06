@@ -13,6 +13,7 @@ export const Input = forwardRef<HTMLInputElement, Props>(
       <input
         {...props}
         ref={ref}
+        aria-invalid={error ? 'true' : 'false'}
         className={clsx(styles.input, error && styles.error)}
       />
     );

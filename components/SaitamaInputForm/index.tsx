@@ -27,7 +27,6 @@ export const SaitamaInputForm: React.FC<Props> = ({ handle }) => {
         行ったことがある埼玉県の市町は？
       </label>
       <InputWithAlert
-        // aria-invalid={errors.name ? 'true' : 'false'}
         inputProps={{
           ...register('name'),
           id: 'name',
