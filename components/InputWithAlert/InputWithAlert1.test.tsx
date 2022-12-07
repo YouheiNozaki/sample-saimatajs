@@ -7,7 +7,7 @@ describe('InputWithAlert1:idでテストをしている良くない例', () => {
     render(<InputWithAlert inputProps={{ defaultValue: '' }} />);
     const text = getTextById('alert');
 
-    expect(text).toBe(undefined);
+    expect(text).toBeUndefined();
   });
 
   test('エラーメッセージが表示される', async () => {
